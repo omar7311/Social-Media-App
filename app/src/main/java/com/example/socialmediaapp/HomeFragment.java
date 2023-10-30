@@ -51,6 +51,20 @@ ArrayList<PostModel> posts=new ArrayList<>();
     private void addFakeData(){
         posts.add(new PostModel(R.drawable.donut,R.drawable.mascot_1,
                 "asdasdasdasdadasdadadadacxvxcvvvvvvvvvvvvvvvvvvvvv","omar ahmed"));
+        posts.add(new PostModel(R.drawable.donut,R.drawable.mascot_1,
+                "asdasdasdasdadasdadadadacxvxcvvvvvvvvvvvvvvvvvvvvv","omar ahmed"));
+        posts.add(new PostModel(R.drawable.donut,R.drawable.mascot_1,
+                "asdasdasdasdadasdadadadacxvxcvvvvvvvvvvvvvvvvvvvvv","omar ahmed"));
+        posts.add(new PostModel(R.drawable.donut,R.drawable.mascot_1,
+                "asdasdasdasdadasdadadadacxvxcvvvvvvvvvvvvvvvvvvvvv","omar ahmed"));
+        posts.add(new PostModel(R.drawable.donut,R.drawable.mascot_1,
+                "asdasdasdasdadasdadadadacxvxcvvvvvvvvvvvvvvvvvvvvv","omar ahmed"));
+        posts.add(new PostModel(R.drawable.donut,R.drawable.mascot_1,
+                "asdasdasdasdadasdadadadacxvxcvvvvvvvvvvvvvvvvvvvvv","omar ahmed"));
+        posts.add(new PostModel(R.drawable.donut,R.drawable.mascot_1,
+                "asdasdasdasdadasdadadadacxvxcvvvvvvvvvvvvvvvvvvvvv","omar ahmed"));
+        posts.add(new PostModel(R.drawable.donut,R.drawable.mascot_1,
+                "asdasdasdasdadasdadadadacxvxcvvvvvvvvvvvvvvvvvvvvv","omar ahmed"));
 
     }
 }
