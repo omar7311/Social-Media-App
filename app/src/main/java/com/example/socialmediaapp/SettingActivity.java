@@ -17,6 +17,6 @@ public class SettingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_setting);
         toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        // test ui push
     }
 }
