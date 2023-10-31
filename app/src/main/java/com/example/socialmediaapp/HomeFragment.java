@@ -1,24 +1,15 @@
 package com.example.socialmediaapp;
-
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.google.android.material.tabs.TabLayout;
-
 import java.util.ArrayList;
-
-
 public class HomeFragment extends Fragment {
 RecyclerView recyclerView;
 ArrayList<PostModel> posts=new ArrayList<>();
