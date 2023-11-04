@@ -28,7 +28,7 @@ RecyclerView recyclerView;
     TextInputEditText editMessage;
     MaterialButton buttonSend;
     ArrayList<MessageModel> models=new ArrayList<>();;
-    MessageAdapter adapter;
+    MessageAdapter adapter=new MessageAdapter();;
     FirebaseAuth auth=FirebaseAuth.getInstance();
 
   DatabaseReference ref=FirebaseDatabase.getInstance().getReference();
@@ -47,7 +47,8 @@ RecyclerView recyclerView;
         buttonSend=findViewById(R.id.send_button);
     }
     private void setupRecycleView(){
-
+        adapter.setAdapter(models);
+        recyclerView.setAdapter(adapter);
         ref.child("messages").addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -63,8 +64,6 @@ RecyclerView recyclerView;
 
             }
         });
-        adapter=new MessageAdapter(models);
-        recyclerView.setAdapter(adapter);
     }
     private void onClick(){
         buttonSend.setOnClickListener(new View.OnClickListener() {

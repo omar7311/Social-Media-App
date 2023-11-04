@@ -19,8 +19,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageH
 
     FirebaseAuth auth=FirebaseAuth.getInstance();
     ArrayList<MessageModel> messageModelArrayList;
-    public MessageAdapter(ArrayList<MessageModel> messageModels) {
+    public void setAdapter(ArrayList<MessageModel> messageModels) {
         this.messageModelArrayList = messageModels;
+        notifyDataSetChanged();
     }
 
     @NonNull
