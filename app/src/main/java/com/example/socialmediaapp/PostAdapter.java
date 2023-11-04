@@ -1,5 +1,6 @@
 package com.example.socialmediaapp;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +14,8 @@ import java.util.List;
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostHolder> {
   List<ResponsePostsItem> postsItems;
 
- PostAction postAction;
-    void setList(List<ResponsePostsItem> postsItems,PostAction postAction){
+    void setList(List<ResponsePostsItem> postsItems){
         this.postsItems=postsItems;
-        this.postAction=postAction;
         notifyDataSetChanged();
     }
     @NonNull
@@ -36,9 +35,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostHolder> {
     public int getItemCount() {
         return postsItems==null? 0:postsItems.size();
     }
-    public interface PostAction{
-        void postClick(ResponsePostsItem postsItem);
-    }
+
      class PostHolder extends RecyclerView.ViewHolder {
         TextView title,body;
 
@@ -49,8 +46,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                  // v.getContext().startActivity(new);
-                  postAction.postClick(postsItems.get(getLayoutPosition()));
+                    Intent intent=new Intent(v.getContext(), DetailsPostActivity.class);
+                    intent.putExtra("key",postsItems.get(getLayoutPosition()).getId());
+                   v.getContext().startActivity(intent);
+
 
                 }
             });

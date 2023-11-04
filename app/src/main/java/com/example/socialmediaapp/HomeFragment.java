@@ -28,7 +28,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class HomeFragment extends Fragment implements PostAdapter.PostAction {
+public class HomeFragment extends Fragment  {
     RecyclerView recyclerView;
     PostAdapter postAdapter = new PostAdapter();
 
@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment implements PostAdapter.PostAction {
             public void onResponse(Call<List<ResponsePostsItem>> call, Response<List<ResponsePostsItem>> response) {
                 if (response.isSuccessful()) {
                     Log.d("tag", "response success");
-                    postAdapter.setList(response.body(),HomeFragment.this);
+                    postAdapter.setList(response.body());
                 }
             }
 
@@ -73,15 +73,6 @@ public class HomeFragment extends Fragment implements PostAdapter.PostAction {
         recyclerView = view.findViewById(R.id.recycle_posts);
         recyclerView.setAdapter(postAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-    }
-
-
-    @Override
-    public void postClick(ResponsePostsItem postsItem) {
-        Intent intent=new Intent(getActivity(), DetailsPostActivity.class);
-        intent.putExtra("key",postsItem.getId());
-        startActivity(intent);
-        Log.d("tag", "response:" + postsItem.getId());
     }
 }
 
