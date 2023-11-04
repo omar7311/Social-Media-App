@@ -13,8 +13,10 @@ import java.util.List;
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostHolder> {
   List<ResponsePostsItem> postsItems;
 
-    void setList(List<ResponsePostsItem> postsItems){
+ PostAction postAction;
+    void setList(List<ResponsePostsItem> postsItems,PostAction postAction){
         this.postsItems=postsItems;
+        this.postAction=postAction;
         notifyDataSetChanged();
     }
     @NonNull
@@ -34,14 +36,24 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostHolder> {
     public int getItemCount() {
         return postsItems==null? 0:postsItems.size();
     }
-
-    static class PostHolder extends RecyclerView.ViewHolder{
+    public interface PostAction{
+        void postClick(ResponsePostsItem postsItem);
+    }
+     class PostHolder extends RecyclerView.ViewHolder {
         TextView title,body;
 
         public PostHolder(@NonNull View itemView) {
             super(itemView);
             title=itemView.findViewById(R.id.title);
             body=itemView.findViewById(R.id.body);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                  // v.getContext().startActivity(new);
+                  postAction.postClick(postsItems.get(getLayoutPosition()));
+
+                }
+            });
         }
     }
 }

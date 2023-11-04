@@ -1,11 +1,13 @@
 package com.example.socialmediaapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -26,10 +28,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements PostAdapter.PostAction {
     RecyclerView recyclerView;
-
-
     PostAdapter postAdapter = new PostAdapter();
 
     public HomeFragment() {
@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment {
             public void onResponse(Call<List<ResponsePostsItem>> call, Response<List<ResponsePostsItem>> response) {
                 if (response.isSuccessful()) {
                     Log.d("tag", "response success");
-                    postAdapter.setList(response.body());
+                    postAdapter.setList(response.body(),HomeFragment.this);
                 }
             }
 
@@ -76,6 +76,13 @@ public class HomeFragment extends Fragment {
     }
 
 
+    @Override
+    public void postClick(ResponsePostsItem postsItem) {
+        Intent intent=new Intent(getActivity(), DetailsPostActivity.class);
+        intent.putExtra("key",postsItem.getId());
+        startActivity(intent);
+        Log.d("tag", "response:" + postsItem.getId());
+    }
 }
 
 
