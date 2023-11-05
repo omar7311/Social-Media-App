@@ -1,53 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:cardCornerRadius="@dimen/_20sdp"
-    android:padding="@dimen/_3sdp"
-    android:layout_margin="@dimen/_3sdp"
-    tools:context=".DetailsPostActivity">
-    <androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_20sdp"
         android:padding="@dimen/_3sdp"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/user_id"
+        android:layout_margin="@dimen/_3sdp"
+        tools:context=".DetailsPostActivity">
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:background="@color/light_Purple"
-            android:textSize="@dimen/_15sdp"
-            tools:text="dfdsfsdfsdfsdfsdf"/>
-        <TextView
-            android:id="@+id/id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/light_Purple"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_15sdp"
-            tools:text="dfdsfsdfsdfsdfsdf"/>
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:background="@color/light_Purple"
-            android:textSize="@dimen/_25sdp"
-            tools:text="dfdsfsdfsdfsdfsdf"/>
-        <TextView
-            android:id="@+id/body"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:background="@color/light_Purple"
-            android:textSize="@dimen/_20sdp"
-            tools:text="dfdsfsdfsdfsdfsdf"/>
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            android:padding="@dimen/_3sdp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/user_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:background="@color/light_Purple"
+                android:textSize="@dimen/_15sdp"
+                tools:text="dfdsfsdfsdfsdfsdf"/>
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_Purple"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                tools:text="dfdsfsdfsdfsdfsdf"/>
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:background="@color/light_Purple"
+                android:textSize="@dimen/_25sdp"
+                tools:text="dfdsfsdfsdfsdfsdf"/>
+            <TextView
+                android:id="@+id/body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:background="@color/light_Purple"
+                android:textSize="@dimen/_20sdp"
+                tools:text="dfdsfsdfsdfsdfsdf"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_comments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_comment"
+        />
+</androidx.appcompat.widget.LinearLayoutCompat>
 
-</androidx.cardview.widget.CardView>
 
 

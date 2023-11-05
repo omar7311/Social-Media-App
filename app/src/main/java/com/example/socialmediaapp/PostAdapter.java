@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostHolder> {
-  List<ResponsePostsItem> postsItems;
+  private static List<ResponsePostsItem> postsItems;
 
     void setList(List<ResponsePostsItem> postsItems){
         this.postsItems=postsItems;
@@ -36,7 +36,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostHolder> {
         return postsItems==null? 0:postsItems.size();
     }
 
-     class PostHolder extends RecyclerView.ViewHolder {
+    static class PostHolder extends RecyclerView.ViewHolder {
         TextView title,body;
 
         public PostHolder(@NonNull View itemView) {
