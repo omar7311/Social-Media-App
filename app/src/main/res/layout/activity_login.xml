@@ -23,29 +23,33 @@
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/userName_EditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_30sdp"
         app:layout_constraintTop_toBottomOf="@id/title_textView"
         android:textSize="@dimen/_15sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/_30sdp"
         android:layout_marginHorizontal="@dimen/_20sdp"
+        android:background="@drawable/my_shape"
         android:inputType="textEmailAddress"
+        android:textColorHint="@color/black"
         android:hint="@string/user_name_hint"
         android:drawableStart="@drawable/baseline_person_24"
         />
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/passWord_EditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:background="@drawable/my_shape"
         app:layout_constraintTop_toBottomOf="@id/userName_EditText"
         android:textSize="@dimen/_15sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginHorizontal="@dimen/_20sdp"
+        android:textColorHint="@color/black"
         android:hint="@string/password_hint"
-        android:inputType="textPassword"
+        android:inputType="numberPassword"
         android:drawableStart="@drawable/baseline_enhanced_encryption_24"
         />
     <androidx.appcompat.widget.AppCompatButton
@@ -56,10 +60,11 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginHorizontal="@dimen/_20sdp"
         android:text="@string/log_in_button"
+        android:background="@drawable/button_selector"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/purple"
+
         />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -86,6 +91,6 @@
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/purple"
+        android:background="@drawable/button_selector"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

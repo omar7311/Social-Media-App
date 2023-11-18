@@ -5,19 +5,23 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ProfileFragment">
-<androidx.appcompat.widget.AppCompatImageView
+<com.google.android.material.imageview.ShapeableImageView
     android:id="@+id/background_image"
     android:layout_width="match_parent"
     android:layout_height="@dimen/_150sdp"
+    android:cropToPadding="true"
     app:layout_constraintTop_toTopOf="parent"
-    android:background="@color/light_Purple"
+
+    android:background="@drawable/mascot_1"
     android:clickable="true"
     android:focusable="true" />
    <de.hdodenhof.circleimageview.CircleImageView
        android:id="@+id/profile_image"
        android:layout_width="@dimen/_75sdp"
        android:layout_height="@dimen/_75sdp"
-       android:background="@color/purple"
+
+       android:background="@drawable/donut"
+       android:cropToPadding="true"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintTop_toTopOf="parent"
@@ -42,6 +46,9 @@
         android:text="upload profile image"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/button_selector"
+        app:backgroundTint="@null"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_user_name"
@@ -55,6 +62,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/upload_profile_image"
         android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/button_selector"
+        app:backgroundTint="@null"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:enabled="false"/>
