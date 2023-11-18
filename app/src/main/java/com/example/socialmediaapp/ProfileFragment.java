@@ -56,7 +56,7 @@ public class ProfileFragment extends Fragment  {
                     if (o != null) {
                         uriProfileImage=o;
                         profileImage.setImageURI(o);
-                        uploadProfileImage.setEnabled(true);
+                        uploadProfileImage.setVisibility(View.VISIBLE);
                     }
                 }
             });
@@ -67,7 +67,7 @@ public class ProfileFragment extends Fragment  {
                     if (o != null) {
                         uriBackgroundImage=o;
                         backgroundImage.setImageURI(o);
-                        uploadBackgroundImage.setEnabled(true);
+                        uploadBackgroundImage.setVisibility(View.VISIBLE);
                     }
                 }
             });
@@ -109,7 +109,6 @@ public class ProfileFragment extends Fragment  {
         super.onViewCreated(view, savedInstanceState);
         initUI(view);
         onClick();
-
     }
     private void initUI(View view){
         backgroundImage = (AppCompatImageView) view.findViewById(R.id.background_image);

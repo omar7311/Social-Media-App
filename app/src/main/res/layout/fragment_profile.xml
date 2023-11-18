@@ -11,7 +11,6 @@
     android:layout_height="@dimen/_150sdp"
     android:cropToPadding="true"
     app:layout_constraintTop_toTopOf="parent"
-
     android:background="@drawable/mascot_1"
     android:clickable="true"
     android:focusable="true" />
@@ -52,7 +51,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_user_name"
-        android:enabled="false"
+        android:visibility="gone"
          />
 
     <com.google.android.material.button.MaterialButton
@@ -67,5 +66,5 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:enabled="false"/>
+        android:visibility="gone"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
