@@ -46,9 +46,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ProfileFragment extends Fragment  {
     ImageView backgroundImage;
     CircleImageView profileImage;
-     MaterialButton uploadProfileImage,uploadBackgroundImage;
-     StorageReference storageReference;
-     Uri uriProfileImage ,uriBackgroundImage;
+    MaterialButton uploadProfileImage,uploadBackgroundImage;
+    StorageReference storageReference;
+    Uri uriProfileImage ,uriBackgroundImage;
     private ActivityResultLauncher<String> getContentProfileImage = registerForActivityResult(
             new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
                 @Override
@@ -107,10 +107,9 @@ public class ProfileFragment extends Fragment  {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-       initUI(view);
+        initUI(view);
         onClick();
-        profileImage.setImageURI(uriProfileImage);
-        backgroundImage.setImageURI(uriBackgroundImage);
+
     }
     private void initUI(View view){
         backgroundImage = (AppCompatImageView) view.findViewById(R.id.background_image);
@@ -120,8 +119,8 @@ public class ProfileFragment extends Fragment  {
         storageReference= FirebaseStorage.getInstance().getReference("users_image");
     }
     private void setUploadProfileImage(){
-       final StorageReference newStorage=storageReference.child(System.currentTimeMillis()+"");
-       newStorage.putFile(uriProfileImage);
+        final StorageReference newStorage=storageReference.child(System.currentTimeMillis()+"");
+        newStorage.putFile(uriProfileImage);
 
 
     }
@@ -130,32 +129,32 @@ public class ProfileFragment extends Fragment  {
         newStorage.putFile(uriBackgroundImage);
 
     }
-private void onClick(){
-    profileImage.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            checkGalleryPermission(v);
-        }
-    });
-    backgroundImage.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            checkGalleryPermission(v);
-        }
-    });
-    uploadProfileImage.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            setUploadProfileImage();
-        }
-    });
-    uploadBackgroundImage.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            setUploadBackgroundImage();
-        }
-    });
-}
+    private void onClick(){
+        profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkGalleryPermission(v);
+            }
+        });
+        backgroundImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkGalleryPermission(v);
+            }
+        });
+        uploadProfileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setUploadProfileImage();
+            }
+        });
+        uploadBackgroundImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setUploadBackgroundImage();
+            }
+        });
+    }
     private void uiExplain(String title, String message) {
         final AlertDialog.Builder alertDialog = new AlertDialog.Builder(getContext());
         alertDialog.setTitle(title);

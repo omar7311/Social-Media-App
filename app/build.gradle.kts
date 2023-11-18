@@ -43,6 +43,7 @@ dependencies {
     //ssp
     implementation( "com.intuit.ssp:ssp-android:1.1.0")
     //firebase
+    implementation("com.firebaseui:firebase-ui-storage:7.2.0")
     implementation(platform("com.google.firebase:firebase-bom:32.4.0"))
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.android.gms:play-services-auth:20.7.0")
