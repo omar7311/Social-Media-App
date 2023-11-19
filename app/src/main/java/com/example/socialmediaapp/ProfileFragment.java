@@ -68,6 +68,7 @@ public class ProfileFragment extends Fragment  {
                         uriBackgroundImage=o;
                         backgroundImage.setImageURI(o);
                         uploadBackgroundImage.setVisibility(View.VISIBLE);
+
                     }
                 }
             });
