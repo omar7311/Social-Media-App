@@ -109,6 +109,7 @@ public class ProfileFragment extends Fragment  {
         super.onViewCreated(view, savedInstanceState);
         initUI(view);
         onClick();
+
     }
     private void initUI(View view){
         backgroundImage = (AppCompatImageView) view.findViewById(R.id.background_image);

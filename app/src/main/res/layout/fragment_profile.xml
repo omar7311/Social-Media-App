@@ -18,7 +18,6 @@
        android:id="@+id/profile_image"
        android:layout_width="@dimen/_75sdp"
        android:layout_height="@dimen/_75sdp"
-
        android:background="@drawable/donut"
        android:cropToPadding="true"
        app:layout_constraintStart_toStartOf="parent"
