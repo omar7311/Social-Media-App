@@ -170,7 +170,6 @@ public class ProfileFragment extends Fragment  {
         alertDialog.show();
     }
 
-
     private void checkGalleryPermission(View view) {
         if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -183,8 +182,4 @@ public class ProfileFragment extends Fragment  {
                     launch(Manifest.permission.READ_EXTERNAL_STORAGE);
         }
     }
-
-
-
-
 }
